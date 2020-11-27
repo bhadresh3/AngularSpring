@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpParams} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Person } from './person';
 
@@ -20,6 +20,13 @@ export class PersonService {
 
   public save(person: Person) {
     return this.http.post<Person>(this.peopleUrl, person);
+  }
+
+  public find(category: string, search: string) {
+    let params = new HttpParams()
+      .set('category', category)
+      .set('search', search);
+    return this.http.get<Person[]>(this.peopleUrl + '/find', {params});
   }
 
 }

@@ -8,12 +8,14 @@ import { PersonFormComponent } from './person-form/person-form.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PersonService } from './person-service';
+import { FindPersonComponent } from './find-person/find-person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonListComponent,
-    PersonFormComponent
+    PersonFormComponent,
+    FindPersonComponent
   ],
   imports: [
     BrowserModule,

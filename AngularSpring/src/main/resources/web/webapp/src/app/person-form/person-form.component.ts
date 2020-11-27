@@ -14,7 +14,8 @@ export class PersonFormComponent implements OnInit {
 
   constructor(private route : ActivatedRoute,
               private router : Router,
-              private personService : PersonService,) {
+              private personService : PersonService) 
+              {
                 this.person = new Person();
                }
 

@@ -20,4 +20,14 @@ public class PersonServiceImpl implements PersonService {
     public Person addPerson(Person person) {
         return personRepo.save(person);
     }
+
+    @Override
+    public List<Person> findByNameLike(String search) {
+        return personRepo.findByNameLikeIgnoreCase(search);
+    }
+
+    @Override
+    public List<Person> findByAboutLike(String search) {
+        return personRepo.findByAboutLikeIgnoreCase(search);
+    }
 }

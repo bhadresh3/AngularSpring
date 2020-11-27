@@ -1,0 +1,51 @@
+<form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+    <div class="form-group">
+        <label for="searchSelect">Seach Category</label>
+        <select 
+        class="form-control" 
+        id="searchSelect" 
+        [(ngModel)]="category"
+        name = searchSelect
+        #searchSelect="ngModel">
+          <option value="name">Name</option>
+          <option value="about">About</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="searchInput">Serch Term</label>
+        <input type="text" 
+        class="form-control" 
+        id="searchInput" 
+        placeholder="search term" 
+        required [(ngModel)]="search"
+        name = "searchInput"
+        #searchInput="ngModel">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!searchForm.form.valid" >Find</button>
+    </div>
+</form>
+<div class = "card my-5" *ngIf="people?.length">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Salary</th>
+            <th scope="col">About Me</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of people">
+            <td>{{ person.id }}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.age }}</td>
+            <td>{{ person.salary }}</td>
+            <td>{{ person.about }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

@@ -31,6 +31,18 @@
               required #email="ngModel">
             <div [hidden]="!email.pristine" class="alert alert-danger">Salary is required</div>
           </div>
+          <div class="form-group">
+            <label for="about">About yourself</label>
+            <textarea
+            [(ngModel)]="person.about"
+              class="form-control"
+              id="about"
+              rows="3"
+              name="about"
+              placeholder="Tell us something about yourself"
+              required #about="ngModel"></textarea>
+            <div [hidden]="!about.pristine" class="alert alert-danger">About is required</div>
+          </div>
         <button type="submit" [disabled]="!userForm.form.valid" 
           class="btn btn-info">Submit</button>
       </form>

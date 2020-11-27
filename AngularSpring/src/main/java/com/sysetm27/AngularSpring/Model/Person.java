@@ -26,4 +26,7 @@ public class Person {
     @Column
     private int age;
 
+    @Column
+    private String about;
+
 }

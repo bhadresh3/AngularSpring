@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.*;
 import java.util.List;
 
 @RestController
@@ -25,5 +26,15 @@ public class PersonController {
     @ResponseStatus(HttpStatus.CREATED)
     public Person addPerson(@RequestBody Person person) {
         return personService.addPerson(person);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/find")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Person> search(@RequestParam("category") String category, @RequestParam("search") String search){
+        if(category.equals("name")){
+            return personService.findByNameLike("%" + search + "%");
+        } else {
+            return personService.findByAboutLike("%" + search + "%");
+        }
     }
 }

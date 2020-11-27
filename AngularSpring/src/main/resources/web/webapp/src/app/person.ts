@@ -3,4 +3,5 @@ export class Person {
     name: String;
     age: Number;
     salary: Number;
+    about: String;
 }
