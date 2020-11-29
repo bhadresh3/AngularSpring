@@ -5,11 +5,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/java/person")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200")
 public class PersonController {
